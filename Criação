@@ -1,0 +1,35 @@
+while True:
+    # O bloco 'try' diz ao Python: "Tente rodar esse código"
+    try:
+        print("\n" + "=" * 30)
+        operacao = int(input("1- Soma\n2- Subtração\n3- Multiplicação\n4- Divisão\n5- Sair\nEscolha a operação: "))
+
+        if operacao == 5:
+            print("Encerrando o programa. Até mais!")
+            break  # Sai do loop de forma limpa
+
+        if operacao not in [1, 2, 3, 4]:
+            print("Opção inválida! Escolha um número de 1 a 5.")
+            continue  # Volta para o início do loop
+
+        # Entrada dos números
+        Num_1 = float(input("Digite o primeiro número: "))
+        Num_2 = float(input("Digite o segundo número: "))
+
+        # Processamento e Resposta (Usando PRINT para não travar)
+        if operacao == 1:
+            print(f"-> A soma é: {Num_1 + Num_2}")
+        elif operacao == 2:
+            print(f"-> A subtração é: {Num_1 - Num_2}")
+        elif operacao == 3:
+            print(f"-> A multiplicação é: {Num_1 * Num_2}")
+        elif operacao == 4:
+            if Num_2 != 0:
+                print(f"-> A divisão é: {Num_1 / Num_2}")
+            else:
+                print("-> Erro: Não é possível dividir por zero!")
+
+    # O 'except' diz: "Se acontecer um ValueError em qualquer lugar do try, faça isso:"
+    except ValueError:
+        print("\n[ERRO] Entrada inválida! Por favor, digite apenas números.")
+        # O loop não quebra, ele simplesmente recomeça
